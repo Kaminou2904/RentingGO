@@ -1,0 +1,15 @@
+@media screen and (min-width: 560px) {
+    .detailMain{
+        display: flex;
+    }
+    .leftDesk{
+        width: 70%;
+    }
+    .rightDesk{
+        height: 100vh;
+        overflow-y: auto;
+    }
+    .floatBtnWrap{
+        left: 0;
+    }
+}

@@ -1,0 +1,12 @@
+/* *{
+    color: red;
+} */
+
+.categorycard{
+    width: 75px;
+}
+
+.categoryTxt{
+    font-size: 12px;
+    white-space: nowrap;
+}
