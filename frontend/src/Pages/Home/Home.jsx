@@ -10,9 +10,9 @@ import Header from '../../components/Header/Header';
 function Home() {
     return (
         <div className='containerr'>
-            <Header headTxt1='Renting' headTxt2='GO'/>
-            <div className="container">
-                <Carousel carouselid='homeCar' img1='./images/Monsoon-offer-banner-HP.jpg' img2='./images/Paytm-Payments-Bank-web-.jpg' img3='./images/Referral banner Web.jpg' />
+            <Header back='none' headTxt1='Renting' headTxt2='GO'/>
+            <div className="container mt-5 pt-4">
+                <Carousel carouselid='homeCar' img1='./images/Monsoon-offer-banner-HP.jpg' img2='./images/Paytm-Payments-Bank-web-.jpg' img3='./images/Referral banner Web.jpg'/>
                 <div className="categoryWrap d-flex flex-wrap mt-4">
                     <Categories img='./images/mistfanIcon.png' txt='Mist Fan' />
                     <Categories img='./images/aircooler.png' txt='Air cooler' />

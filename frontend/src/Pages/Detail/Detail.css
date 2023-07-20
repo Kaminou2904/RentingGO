@@ -1,3 +1,19 @@
+.detailBackBtn{
+    position: fixed;
+    top: 25px;
+    left: 10px;
+    z-index: 5;
+}
+
+.detailBackBtn button{
+    outline: none;
+    border: none;
+}
+
+.detailBackBtn button i{
+    background-color: rgba(0, 0, 0, 0.446);
+}
+
 @media screen and (min-width: 560px) {
     .detailMain{
         display: flex;

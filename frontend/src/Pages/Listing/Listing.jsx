@@ -7,7 +7,7 @@ function Listing() {
   return (
     <div className="container-fluid p-0">
       <Header headTxt1='List' headTxt2='ing'/>
-      <div className='container d-flex flex-wrap'>
+      <div className='container d-flex flex-wrap mt-5 pt-4'>
         <Listingcard id='car1' img1='./images/airpuri.jpg' img2='./images/airpurilg1.jpg' img3='./images/airpurilg2.jpg' />
         <Listingcard id='car2' img1='./images/airpuri.jpg' img2='./images/airpurilg1.jpg' img3='./images/airpurilg2.jpg' />
         <Listingcard id='car3' img1='./images/airpuri.jpg' img2='./images/airpurilg1.jpg' img3='./images/airpurilg2.jpg' />
@@ -17,4 +17,4 @@ function Listing() {
   )
 }
 
-export default Listing
+export default Listing;

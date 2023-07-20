@@ -1,17 +1,22 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Detail.css';
 import Carousel from '../../components/Carousel/carousel';
 import Commentcard from '../../components/Commentcard/Commentcard';
 
 function Detail() {
+  const navigate = useNavigate();
   return (
     <div className='detailMain'>
       <div className="leftDesk">
+        <div className="detailBackBtn">
+          <button className='btn p-0 m-0' onClick={() => navigate(-1)}><i className="fas fa-chevron-left rounded-circle me-3 fs-4 p-2 pe-3 text-white"></i></button>
+        </div>
         <Carousel carouselid='detailCar' img1='./images/airpurism.jpg' img2='./images/airpuri2.jpg' img3='./images/airpuri1.jpg' />
       </div>
 
       <div className="rightDesk">
-      <div className="spaInfo mt-3 container">
+        <div className="spaInfo mt-3 container">
           <h3 className="mb-0">Air Purifier</h3>
           <div className="detailRating bg-light rounded-3 p-2 d-flex justify-content-between mt-3">
             <div className="starts">
