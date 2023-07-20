@@ -7,7 +7,7 @@ function Detail() {
   return (
     <div className='detailMain'>
       <div className="leftDesk">
-        <Carousel img1='./images/airpurism.jpg' img2='./images/airpuri2.jpg' img3='./images/airpuri1.jpg' />
+        <Carousel carouselid='detailCar' img1='./images/airpurism.jpg' img2='./images/airpuri2.jpg' img3='./images/airpuri1.jpg' />
       </div>
 
       <div className="rightDesk">

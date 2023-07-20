@@ -12,7 +12,7 @@ function Home() {
         <div className='containerr'>
             <Header headTxt1='Renting' headTxt2='GO'/>
             <div className="container">
-                <Carousel img1='./images/Monsoon-offer-banner-HP.jpg' img2='./images/Paytm-Payments-Bank-web-.jpg' img3='./images/Referral banner Web.jpg' />
+                <Carousel carouselid='homeCar' img1='./images/Monsoon-offer-banner-HP.jpg' img2='./images/Paytm-Payments-Bank-web-.jpg' img3='./images/Referral banner Web.jpg' />
                 <div className="categoryWrap d-flex flex-wrap mt-4">
                     <Categories img='./images/mistfanIcon.png' txt='Mist Fan' />
                     <Categories img='./images/aircooler.png' txt='Air cooler' />
