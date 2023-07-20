@@ -11,6 +11,6 @@
 }
 
 .backBtnWrap i{
-    background-color: rgba(0, 0, 0, 0.29) !important;
+    /* background-color: rgba(0, 0, 0, 0.29) !important; */
     cursor: pointer;
 }

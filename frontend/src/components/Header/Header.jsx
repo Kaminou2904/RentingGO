@@ -10,7 +10,7 @@ function Header(props) {
             <div className="leftHead d-flex align-items-center">
               <div className={`d-${props.back}`}>
               <div className="backBtnWrap">
-                <button className='btn p-0 m-0' onClick={()=>navigate(-1)}><i className="fas fa-chevron-left rounded-circle me-3 bg-secondary fs-4 p-2 pe-3 text-white"></i></button>
+                <button className='btn p-0 m-0' onClick={()=>navigate(-1)}><i className="fas fa-chevron-left rounded-circle me-1 fs-4 p-2 pe-2 text-dark"></i></button>
               </div>
               </div>
               <h3 className="mb-0">{props.headTxt1}<span className='text-primary fw-bold'>{props.headTxt2}</span></h3>
