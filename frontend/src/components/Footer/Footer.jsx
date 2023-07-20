@@ -10,8 +10,8 @@ function Footer() {
                     <div className="footerAdd d-flex align-items-center w-75">
                         <i className="fas fa-map-marker-alt fs-4 brandGoldTxt d-block rounded-circle border addLogo p-2 me-3"></i>
                         <div className="addText">
-                            <p className="mb-0 fw-bold fs-5 addtxt1">The Yeti Spa</p>
-                            <p className="text-muted mb-0 addtxt2">Khar, Bandra West, Mumbai, Maharashtra 400052</p>
+                            <p className="mb-0 fw-bold fs-5 addtxt1">RentingGO</p>
+                            <p className="text-muted mb-0 addtxt2">Shop no. 101, Powai Plaza, Powai, Mumbai 400076</p>
                         </div>
                     </div>
                     <div className="addOpen mt-4 d-flex align-items-center w-75">
@@ -27,10 +27,7 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="footerLogo container-fluid text-center mt-3">
-                    <img src="./assests/images/yetiLogo.png" className="img-fluid" alt=""/>
-                </div>
-                <div className="rightsNCredit container-fluid d-flex justify-content-between">
+                <div className="rightsNCredit container-fluid d-flex justify-content-between mt-5">
                     <div className="rights text-muted">
                         &copy;2023. All Rights Reserved.
                     </div>

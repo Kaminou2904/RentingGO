@@ -39,10 +39,6 @@ function Home() {
                     <div className="moreCardWrap mt-4 d-flex flex-wrap">
                         <Morecard />
                         <Morecard />
-                        <Morecard />
-                        <Morecard />
-                        <Morecard />
-                        <Morecard />
                     </div>
                 </div>
             </div>
