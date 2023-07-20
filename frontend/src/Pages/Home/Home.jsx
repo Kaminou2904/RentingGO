@@ -10,7 +10,7 @@ import Header from '../../components/Header/Header';
 function Home() {
     return (
         <div className='containerr'>
-            <Header/>
+            <Header headTxt1='Renting' headTxt2='GO'/>
             <div className="container">
                 <Carousel img1='./images/Monsoon-offer-banner-HP.jpg' img2='./images/Paytm-Payments-Bank-web-.jpg' img3='./images/Referral banner Web.jpg' />
                 <div className="categoryWrap d-flex flex-wrap mt-4">
