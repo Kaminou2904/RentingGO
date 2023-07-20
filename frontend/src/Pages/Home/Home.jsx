@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import { Link } from 'react-router-dom';
 import Carousel from '../../components/Carousel/carousel';
 import Categories from '../../components/Categories/Categories';
 import Productcard from '../../components/Productcard/Productcard';
@@ -28,6 +29,9 @@ function Home() {
                         <Productcard />
                         <Productcard />
                         <Productcard />
+                        <div className="btnWrap d-flex justify-content-center align-items-center">
+                        <Link to='/listing' className="btn btn-outline-secondary rounded-circle">View More</Link>
+                        </div>
                     </div>
                 </div>
                 <div className="more mb-5">
