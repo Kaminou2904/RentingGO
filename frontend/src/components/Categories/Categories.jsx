@@ -6,7 +6,7 @@ function Categories(props) {
     <div>
         <div className="main mt-2">
             <div className="categorycard bg-light rounded-3 text-center p-2 me-2">
-                <div className="categoryimg p-3">
+                <div className="categoryimg p-3 py-1">
                     <img src={props.img} alt="package icon" className='img-fluid' />
                 </div>
                 <div className="categoryTxt">
