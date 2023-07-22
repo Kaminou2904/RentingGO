@@ -1,5 +1,6 @@
 import React from 'react';
 import './Categories.css';
+import { Link } from 'react-router-dom';
 
 function Categories(props) {
 
@@ -19,14 +20,14 @@ function Categories(props) {
   return (
     <div>
         <div className="main mt-2">
-            <div className="categorycard rounded-3 text-center p-2 me-2" style={categoryStyle}>
+            <Link to={`/listing/${props.txt}`} className="nav-link categorycard rounded-3 text-center p-2 me-2" style={categoryStyle}>
                 <div className="categoryimg p-3 py-1">
                     <img src={props.img} alt="package icon" className='img-fluid' />
                 </div>
                 <div className="categoryTxt">
-                    {props.txt}
+                   {props.txt}
                 </div>
-            </div> 
+            </Link>
         </div>
     </div>
   )

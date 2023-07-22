@@ -14,14 +14,20 @@
     background-color: rgba(0, 0, 0, 0.446);
 }
 
+.featuresPara{
+    font-size: 14px;
+    font-weight: 500;
+}
+
 @media screen and (min-width: 560px) {
     .detailMain{
         display: flex;
     }
     .leftDesk{
-        width: 70%;
+        width: 50%;
     }
     .rightDesk{
+        width: 50%;
         height: 100vh;
         overflow-y: auto;
     }

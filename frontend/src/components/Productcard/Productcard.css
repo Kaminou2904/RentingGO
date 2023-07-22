@@ -643,3 +643,9 @@ hr{
         width: 90%;
     }
 }
+
+
+.featNameLink{
+    line-height: 20px;
+    height: 50px;
+}
