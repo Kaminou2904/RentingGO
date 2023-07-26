@@ -72,7 +72,7 @@ function Detail(props) {
             {formattedSubDesc}
           </div>
           <div className="extraInfo">
-            <div className="phoneNo text-muted"><i className="fas fa-phone-alt text-success d-inline"></i> <a href="tel:+91 73042 98519" className="nav-link d-inline">080100 38415</a></div>
+            <div className="phoneNo text-muted"><i className="fas fa-phone-alt text-primary d-inline"></i> <a href="tel:+91 73042 98519" className="nav-link d-inline">080100 38415</a></div>
           </div>
 
           <div className="features my-5 mt-3">
