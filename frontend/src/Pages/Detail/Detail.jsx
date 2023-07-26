@@ -36,10 +36,10 @@ function Detail(props) {
     <div key={index}>{line}</div>
   ));
 
-  const submitHandler = (e)=>{
-    e.preventDefault();
-    console.log('form was submitted successfully!')
-  }
+  // const submitHandler = (e)=>{
+  //   e.preventDefault();
+  //   console.log('form was submitted successfully!')
+  // }
 
   return (
     <div className='detailMain'>
