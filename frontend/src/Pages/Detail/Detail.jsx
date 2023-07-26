@@ -8,7 +8,7 @@ import Data from '../../Data/Products.json';
 
 function Detail(props) {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState('');
+  // const [formData, setFormData] = useState('');
   const [product, setProduct] = useState(null);
   const { name } = useParams();
 
@@ -145,7 +145,7 @@ function Detail(props) {
         )}
         <div>
           <label htmlFor='phoneno'>Name:</label>
-          <input type='tel' name='phoneno' id='phoneno' value={formData} onChange={(e)=> setFormData(e.target.value)} />
+          <input type='tel' name='phoneno' id='phoneno' onChange={handleChange} />
         </div>
         <div>
           <button type='submit'>Submit</button>
