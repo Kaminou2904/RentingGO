@@ -135,24 +135,24 @@ function Detail(props) {
           </form>
         </div> */}
 
-<NetlifyForm name='Contact' action='/thanks' honeypotName='bot-field'>
-    {({ handleChange, success, error }) => (
-      <>
-        <Honeypot />
-        {success && <p>Thanks for contacting us!</p>}
-        {error && (
-          <p>Sorry, we could not reach our servers. Please try again later.</p>
-        )}
-        <div>
-          <label htmlFor='phoneno'>Name:</label>
-          <input type='tel' name='phoneno' id='phoneno' onChange={handleChange} />
-        </div>
-        <div>
-          <button type='submit'>Submit</button>
-        </div>
-      </>
-    )}
-  </NetlifyForm>
+        <NetlifyForm name='Contact' action='/thanks' honeypotName='bot-field'>
+          {({ handleChange, success, error }) => (
+            <>
+              <Honeypot />
+              {success && <p>Thanks for contacting us!</p>}
+              {error && (
+                <p>Sorry, we could not reach our servers. Please try again later.</p>
+              )}
+              <div>
+                <label htmlFor='phoneno'>Your number:</label>
+                <input type='tel' name='phoneno' id='phoneno' onChange={handleChange} />
+              </div>
+              <div>
+                <button type='submit'>Submit</button>
+              </div>
+            </>
+          )}
+        </NetlifyForm>
       </div>
     </div>
   )
