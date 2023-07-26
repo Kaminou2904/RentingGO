@@ -7,6 +7,7 @@ import Data from '../../Data/Products.json';
 
 function Detail(props) {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState('');
   const [product, setProduct] = useState(null);
   const { name } = useParams();
 
@@ -122,11 +123,11 @@ function Detail(props) {
 
       <div className="formPopupContainer">
         <div className="fomrPopup">
-          <form name='Contact' method='post' netlify onSubmit={submitHandler}>
+          <form name='Contact' method='POST' onSubmit={submitHandler}>
           <input type="hidden" name="form-name" value="Contact" />
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">Your Number</label>
-              <input type="tel" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+              <input type="tel" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={formData} onChange={(e)=> setFormData(e.target.value)}/>
               <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
