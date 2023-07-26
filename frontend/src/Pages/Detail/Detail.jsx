@@ -144,6 +144,10 @@ function Detail(props) {
                 <p>Sorry, we could not reach our servers. Please try again later.</p>
               )}
               <div>
+                <label htmlFor='name'>Your number:</label>
+                <input type='text' name='name' id='name' onChange={handleChange} />
+              </div>
+              <div>
                 <label htmlFor='phoneno'>Your number:</label>
                 <input type='tel' name='phoneno' id='phoneno' onChange={handleChange} />
               </div>
