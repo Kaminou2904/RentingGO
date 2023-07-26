@@ -8,12 +8,12 @@ import Data from '../../Data/Products.json';
 function Detail(props) {
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
-  const {name} = useParams();
+  const { name } = useParams();
 
-  useEffect(()=>{
+  useEffect(() => {
     const foundProduct = findProductByName(name);
     setProduct(foundProduct);
-  },[name]);
+  }, [name]);
 
   const findProductByName = (name) => {
     for (const mainProduct of Data.mainProducts) {
@@ -26,13 +26,18 @@ function Detail(props) {
     return null;
   };
 
-  if(!product){
+  if (!product) {
     return <div>Loading...</div>
   }
 
   const formattedSubDesc = product.subDesc.split('\n').map((line, index) => (
     <div key={index}>{line}</div>
   ));
+
+  const submitHandler = (e)=>{
+    e.preventDefault();
+    console.log('form was submitted successfully!')
+  }
 
   return (
     <div className='detailMain'>
@@ -75,11 +80,11 @@ function Detail(props) {
           <div className="features my-5 mt-3">
             <h3 className='mb-0'>Features</h3>
             <div className="featuresWrap ps-3">
-            {
-              product.subFeatures.map((featur, index)=>(
-                <p key={index} className="mb-0 featuresPara">{index + 1}. {featur}</p>
-              ))
-            }
+              {
+                product.subFeatures.map((featur, index) => (
+                  <p key={index} className="mb-0 featuresPara">{index + 1}. {featur}</p>
+                ))
+              }
             </div>
           </div>
         </div>
@@ -112,6 +117,19 @@ function Detail(props) {
               <a href="tel:+91 08010038415" className="nav-link">Call now</a>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="formPopupContainer">
+        <div className="fomrPopup">
+          <form method='post' name='Contact' netlify='true' onSubmit={submitHandler}>
+            <div className="mb-3">
+              <label htmlFor="exampleInputEmail1" className="form-label">Your Number</label>
+              <input type="tel" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+              <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <button type="submit" className="btn btn-primary">Submit</button>
+          </form>
         </div>
       </div>
     </div>
