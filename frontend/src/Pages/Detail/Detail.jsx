@@ -135,7 +135,7 @@ function Detail(props) {
           </form> */}
         </div>
 
-        <form data-netliy='true'>
+        {/* <form data-netliy='true'> */}
         <NetlifyForm name='Contact' action='/thanks' honeypotName='bot-field'>
           {({ handleChange, success, error }) => (
             <>
@@ -158,7 +158,7 @@ function Detail(props) {
             </>
           )}
         </NetlifyForm>
-        </form>
+        {/* </form> */}
       </div>
     </div>
   )
