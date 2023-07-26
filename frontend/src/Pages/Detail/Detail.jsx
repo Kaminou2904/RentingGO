@@ -35,7 +35,7 @@ function Detail(props) {
   ));
 
   const submitHandler = (e)=>{
-    // e.preventDefault();
+    e.preventDefault();
     console.log('form was submitted successfully!')
   }
 
