@@ -122,7 +122,7 @@ function Detail(props) {
 
       <div className="formPopupContainer">
         <div className="fomrPopup">
-          <form method='post' name='Contact' netlify='true' onSubmit={submitHandler}>
+          <form method='post' name='Contact' netlify onSubmit={submitHandler}>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">Your Number</label>
               <input type="tel" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
