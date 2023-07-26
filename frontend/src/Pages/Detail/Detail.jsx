@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { NetlifyForm, Honeypot } from 'react-netlify-forms'
 import './Detail.css';
 import Carousel from '../../components/Carousel/carousel';
 import Commentcard from '../../components/Commentcard/Commentcard';
@@ -122,7 +123,7 @@ function Detail(props) {
       </div>
 
       <div className="formPopupContainer">
-        <div className="fomrPopup">
+        {/* <div className="fomrPopup">
           <form name='Contact' method='POST' onSubmit={submitHandler}>
           <input type="hidden" name="form-name" value="Contact" />
             <div className="mb-3">
@@ -132,7 +133,26 @@ function Detail(props) {
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
           </form>
+        </div> */}
+
+<NetlifyForm name='Contact' action='/thanks' honeypotName='bot-field'>
+    {({ handleChange, success, error }) => (
+      <>
+        <Honeypot />
+        {success && <p>Thanks for contacting us!</p>}
+        {error && (
+          <p>Sorry, we could not reach our servers. Please try again later.</p>
+        )}
+        <div>
+          <label htmlFor='phoneno'>Name:</label>
+          <input type='tel' name='phoneno' id='phoneno' value={formData} onChange={(e)=> setFormData(e.target.value)} />
         </div>
+        <div>
+          <button type='submit'>Submit</button>
+        </div>
+      </>
+    )}
+  </NetlifyForm>
       </div>
     </div>
   )
