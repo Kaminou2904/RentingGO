@@ -8,6 +8,7 @@ import Data from '../../Data/Products.json';
 function Detail(props) {
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
+  const [formDisplay, setFormDisplay] = useState('none');
   const { name } = useParams();
 
   useEffect(() => {
@@ -34,6 +35,8 @@ function Detail(props) {
     <div key={index}>{line}</div>
   ));
 
+  // const displayForm =()=>{setDisplay('flex')}
+
   return (
     <div className='detailMain'>
       <div className="leftDesk">
@@ -46,13 +49,13 @@ function Detail(props) {
       <div className="rightDesk">
         <div className="spaInfo mt-3 container">
           <h3 className="mb-0">{product.subProName}</h3>
-          <p className="mb-0 fs-6 fw-bold">	&#8377;<span className='fs-5 text-success'>{product.price}</span>/Day</p>
+          <p className="mb-0 fs-6 fw-bold">	&#8377;<span className='fs-5 text-primary'>{product.price}</span>/Day</p>
           <div className="detailRating bg-light rounded-3 p-2 d-flex justify-content-between mt-3">
             <div className="starts">
               <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i
                 className="fas fa-star"></i><i className="fas fa-star"></i>
               <p className="reviewCount text-muted">
-                3.1k reviews <a href="#commentDiv" className="nav-link d-inline"><i className="fas fa-chevron-right ms-2 text-success"></i></a>
+                3.1k reviews <a href="#commentDiv" className="nav-link d-inline"><i className="fas fa-chevron-right ms-2 text-primary"></i></a>
               </p>
             </div>
             <div className="pofileImg d-flex justify-content-center align-items-center">
@@ -90,7 +93,7 @@ function Detail(props) {
               <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i>
               <input type="text" className="form-control" placeholder="Name" />
               <input type="text" className="form-control my-2" placeholder="Write a comment..." />
-              <div className="submitBtn btn btn-success">
+              <div className="submitBtn btn btn-primary">
                 Submit
               </div>
             </div>
@@ -105,12 +108,47 @@ function Detail(props) {
 
         <div className="floatBtnWrap bg-white pt-2">
           <div className="floatBtns container d-flex justify-content-around align-items-center">
-            <div className="floatPrice text-white text-center rounded-3 bg-secondary p-2">
+            <div className="floatPrice text-white text-center rounded-3 bg-secondary p-2 px-3">
               <span className="text-white fw-bold fs-4"><i className="fas fa-rupee-sign"></i>{product.price}</span>/Day
             </div>
-            <div className="floatBooking bg-success text-white p-2 px-3 rounded-3 fs-4">
-              <a href="tel:+91 08010038415" className="nav-link">Call now</a>
+            <div className="floatBooking bg-primary text-white p-2 px-3 rounded-3 fs-4">
+              <p className="mb-0" onClick={()=>{setFormDisplay('flex')}}>Check Avaibility</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="formContainer px-2" style={{display: formDisplay}}>
+        <div className="popupForm bg-white container py-3">
+          <p className="text-end fs-2"><i className="fas fa-times-circle text-secondary fs-2" onClick={()=> setFormDisplay('none')}></i></p>
+          <p className="mb-1 fs-4 fw-bold">Select Day</p>
+          <div className="dateWrap d-flex">
+            <div className="dateCard">
+              <p className="dateCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 ">today</p>
+            </div>
+            <div className="dateCard">
+              <p className="dateCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 ">tommorrow</p>
+            </div>
+            <div className="dateCard">
+              <p className="dateCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 ">28 jul</p>
+            </div>
+          </div>
+          <p className="mb-1 fs-4 fw-bold">How Much</p>
+          <div className="amoundWrap d-flex">
+            <div className="amountCard">
+              <p className="amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5">0 - 10</p>
+            </div>
+            <div className="amountCard">
+              <p className="amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5">10 - 20</p>
+            </div>
+            <div className="amountCard">
+              <p className="amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5">20 - 30</p>
+            </div>
+          </div>
+          <div className="numberForm ">
+            <p className="fs-4 mb-1 fw-bold">Enter your number</p>
+            <input type="text" name='number' className='form-control fs-4 mb-0' placeholder='Ex. 1234567890' /><br />
+            <button className="btn btn-primary m-0 fs-5">Submit</button>
           </div>
         </div>
       </div>
