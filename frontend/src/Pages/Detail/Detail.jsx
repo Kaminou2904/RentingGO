@@ -36,10 +36,11 @@ function Detail(props) {
     <div key={index}>{line}</div>
   ));
 
-  // const submitHandler = (e)=>{
-  //   e.preventDefault();
-  //   console.log('form was submitted successfully!')
-  // }
+  const submitHandler = ()=>{
+    // e.preventDefault();
+    console.log('form was submitted successfully!')
+    alert('form was submitted')
+  }
 
   return (
     <div className='detailMain'>
@@ -135,7 +136,7 @@ function Detail(props) {
           </form> */}
         </div>
 
-        {/* <form data-netliy='true'> */}
+        <form data-netliy='true' method='post' onSubmit={submitHandler}>
         <NetlifyForm name='Contact' action='/thanks' honeypotName='bot-field'>
           {({ handleChange, success, error }) => (
             <>
@@ -158,7 +159,7 @@ function Detail(props) {
             </>
           )}
         </NetlifyForm>
-        {/* </form> */}
+        </form>
       </div>
     </div>
   )
