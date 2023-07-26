@@ -136,7 +136,7 @@ function Detail(props) {
           </form> */}
         </div>
 
-        <form data-netliy='true' method='post' onSubmit={submitHandler}>
+        <form name='Contact' data-netliy='true' method='POST' onSubmit={submitHandler}>
         <NetlifyForm name='Contact' action='/thanks' honeypotName='bot-field'>
           {({ handleChange, success, error }) => (
             <>
