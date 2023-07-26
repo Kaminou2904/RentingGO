@@ -14,6 +14,10 @@
     width: auto !important;
 }
 
+.floatBooking{
+    width: auto !important;
+}
+
 .detailBackBtn button i{
     background-color: rgba(0, 0, 0, 0.446);
 }
