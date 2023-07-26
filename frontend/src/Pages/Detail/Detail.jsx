@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { NetlifyForm, Honeypot } from 'react-netlify-forms'
 import './Detail.css';
 import Carousel from '../../components/Carousel/carousel';
 import Commentcard from '../../components/Commentcard/Commentcard';
@@ -8,7 +7,6 @@ import Data from '../../Data/Products.json';
 
 function Detail(props) {
   const navigate = useNavigate();
-  // const [formData, setFormData] = useState('');
   const [product, setProduct] = useState(null);
   const { name } = useParams();
 
@@ -35,12 +33,6 @@ function Detail(props) {
   const formattedSubDesc = product.subDesc.split('\n').map((line, index) => (
     <div key={index}>{line}</div>
   ));
-
-  const submitHandler = ()=>{
-    // e.preventDefault();
-    console.log('form was submitted successfully!')
-    alert('form was submitted')
-  }
 
   return (
     <div className='detailMain'>
@@ -123,44 +115,6 @@ function Detail(props) {
         </div>
       </div>
 
-      <div className="formPopupContainer">
-        <div className="fomrPopup">
-          {/* <form name='Contact' method='POST' data-netlify='true' onSubmit={submitHandler}>
-          <input type="hidden" name="form-name" value="Contact" />
-            <div className="mb-3">
-              <label htmlFor="exampleInputEmail1" className="form-label">Your Number</label>
-              <input type="tel" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={formData} onChange={(e)=> setFormData(e.target.value)}/>
-              <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
-          </form> */}
-        </div>
-
-        <form name='Contact' data-netliy='true' method='POST' onSubmit={submitHandler}>
-        <NetlifyForm name='Contact' action='/thanks' honeypotName='bot-field'>
-          {({ handleChange, success, error }) => (
-            <>
-              <Honeypot />
-              {success && <p>Thanks for contacting us!</p>}
-              {error && (
-                <p>Sorry, we could not reach our servers. Please try again later.</p>
-              )}
-              <div>
-                <label htmlFor='name'>Your number:</label>
-                <input type='text' name='name' id='name' onChange={handleChange} />
-              </div>
-              <div>
-                <label htmlFor='phoneno'>Your number:</label>
-                <input type='tel' name='phoneno' id='phoneno' onChange={handleChange} />
-              </div>
-              <div>
-                <button type='submit'>Submit</button>
-              </div>
-            </>
-          )}
-        </NetlifyForm>
-        </form>
-      </div>
     </div>
   )
 }
