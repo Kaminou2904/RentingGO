@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-// import { NetlifyForm, Honeypot } from 'react-netlify-forms'
+import { NetlifyForm, Honeypot } from 'react-netlify-forms'
 import './Detail.css';
 import Carousel from '../../components/Carousel/carousel';
 import Commentcard from '../../components/Commentcard/Commentcard';
@@ -8,7 +8,7 @@ import Data from '../../Data/Products.json';
 
 function Detail(props) {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState('');
+  // const [formData, setFormData] = useState('');
   const [product, setProduct] = useState(null);
   const { name } = useParams();
 
@@ -36,10 +36,10 @@ function Detail(props) {
     <div key={index}>{line}</div>
   ));
 
-  const submitHandler = (e)=>{
-    e.preventDefault();
-    console.log('form was submitted successfully!')
-  }
+  // const submitHandler = (e)=>{
+  //   e.preventDefault();
+  //   console.log('form was submitted successfully!')
+  // }
 
   return (
     <div className='detailMain'>
@@ -124,7 +124,7 @@ function Detail(props) {
 
       <div className="formPopupContainer">
         <div className="fomrPopup">
-          <form name='Contact' method='POST' data-netlify='true' onSubmit={submitHandler}>
+          {/* <form name='Contact' method='POST' data-netlify='true' onSubmit={submitHandler}>
           <input type="hidden" name="form-name" value="Contact" />
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">Your Number</label>
@@ -132,10 +132,10 @@ function Detail(props) {
               <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
-          </form>
+          </form> */}
         </div>
 
-        {/* <form data-netliy='true'>
+        <form data-netliy='true'>
         <NetlifyForm name='Contact' action='/thanks' honeypotName='bot-field'>
           {({ handleChange, success, error }) => (
             <>
@@ -158,7 +158,7 @@ function Detail(props) {
             </>
           )}
         </NetlifyForm>
-        </form> */}
+        </form>
       </div>
     </div>
   )
