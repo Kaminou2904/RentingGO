@@ -9,7 +9,15 @@ function Detail(props) {
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [formDisplay, setFormDisplay] = useState('none');
+  const [thankDisp, setThankDisp] = useState('none');
   const { name } = useParams();
+  const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const [activeTabIndexAmt, setActiveTabIndexAmt] = useState(0);
+  const [formData, setFormData] = useState({});
+
+  useEffect(()=>{
+    console.log(formData)
+  },[formData])
 
   useEffect(() => {
     const foundProduct = findProductByName(name);
@@ -35,7 +43,29 @@ function Detail(props) {
     <div key={index}>{line}</div>
   ));
 
-  // const displayForm =()=>{setDisplay('flex')}
+  const getDayAfterTomorrow = () => {
+    const today = new Date();
+    const dayAfterTomorrow = new Date(today);
+    dayAfterTomorrow.setDate(today.getDate() + 2);
+    return dayAfterTomorrow.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+    });
+  };
+
+  const submitfunc = () => {
+    const form = {}
+    form.product = name;
+    form.day = document.querySelector('.activeTabD').innerText;
+    form.amt = document.querySelector('.activeTabA').innerText;
+    form.num = document.querySelector('.numInpu').value;
+    setFormData(form);
+    setFormDisplay('none');
+    setActiveTabIndexAmt(0);
+    setActiveTabIndex(0);
+    setThankDisp('flex');
+    document.querySelector('.numInpu').value = '';
+  }
 
   return (
     <div className='detailMain'>
@@ -111,45 +141,55 @@ function Detail(props) {
             <div className="floatPrice text-white text-center rounded-3 bg-secondary p-2 px-3">
               <span className="text-white fw-bold fs-4"><i className="fas fa-rupee-sign"></i>{product.price}</span>/Day
             </div>
-            <div className="floatBooking bg-primary text-white p-2 px-3 rounded-3 fs-4">
-              <p className="mb-0" onClick={()=>{setFormDisplay('flex')}}>Check Avaibility</p>
+            <div className="floatBooking btn bg-primary text-white p-2 px-3 rounded-3 fs-4">
+              <p className="mb-0" onClick={() => { setFormDisplay('flex') }}>Check Avaibility</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="formContainer px-2" style={{display: formDisplay}}>
+      <div className="formContainer px-2" style={{ display: formDisplay }}>
         <div className="popupForm bg-white container py-3">
-          <p className="text-end fs-2"><i className="fas fa-times-circle text-secondary fs-2" onClick={()=> setFormDisplay('none')}></i></p>
+          <p className="text-end fs-2"><i className="fas fa-times-circle text-secondary btn rounded-circle p-0 fs-2" onClick={() => setFormDisplay('none')}></i></p>
           <p className="mb-1 fs-4 fw-bold">Select Day</p>
           <div className="dateWrap d-flex">
             <div className="dateCard">
-              <p className="dateCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 ">today</p>
+              <button className={`dateCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 btn ${activeTabIndex === 0 ? "activeTabD" : ""}`} onClick={() => setActiveTabIndex(0)}>today</button>
             </div>
             <div className="dateCard">
-              <p className="dateCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 ">tommorrow</p>
+              <button className={`dateCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 btn ${activeTabIndex === 1 ? "activeTabD" : ""}`} onClick={() => setActiveTabIndex(1)}>tommorrow</button>
             </div>
             <div className="dateCard">
-              <p className="dateCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 ">28 jul</p>
+              <button className={`dateCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 btn ${activeTabIndex === 2 ? "activeTabD" : ""}`} onClick={() => setActiveTabIndex(2)}>{getDayAfterTomorrow()}</button>
             </div>
           </div>
           <p className="mb-1 fs-4 fw-bold">How Much</p>
           <div className="amoundWrap d-flex">
             <div className="amountCard">
-              <p className="amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5">0 - 10</p>
+              <button className={`amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 btn ${activeTabIndexAmt === 0 ? "activeTabA" : ""}`} onClick={() => setActiveTabIndexAmt(0)}>0 - 10</button>
             </div>
             <div className="amountCard">
-              <p className="amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5">10 - 20</p>
+              <button className={`amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 btn ${activeTabIndexAmt === 1 ? "activeTabA" : ""}`} onClick={() => setActiveTabIndexAmt(1)}>10 - 20</button>
             </div>
             <div className="amountCard">
-              <p className="amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5">20 - 30</p>
+              <button className={`amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 btn ${activeTabIndexAmt === 2 ? "activeTabA" : ""}`} onClick={() => setActiveTabIndexAmt(2)}>20 - 30</button>
             </div>
           </div>
           <div className="numberForm ">
             <p className="fs-4 mb-1 fw-bold">Enter your number</p>
-            <input type="text" name='number' className='form-control fs-4 mb-0' placeholder='Ex. 1234567890' /><br />
-            <button className="btn btn-primary m-0 fs-5">Submit</button>
+            <input type="text" name='number' className='numInpu form-control fs-4 mb-0' placeholder='Ex. 1234567890'/><br />
+            <button className="btn btn-primary m-0 fs-5" onClick={submitfunc}>Submit</button>
           </div>
+        </div>
+      </div>
+
+      <div className="thankyouDiv p-2" style={{display: thankDisp}}>
+        <div className="thankWrap popupForm bg-white pb-3">
+          <p className="text-end fs-2"><i className="fas fa-times-circle text-secondary btn rounded-circle p-0 fs-2 me-3" onClick={() =>{
+            setThankDisp('none');
+            navigate('/');
+          }}></i></p>
+          <h2 className="fw-bold text-center w-75 mx-auto">Thank You For Filling The Form.</h2>
         </div>
       </div>
 
