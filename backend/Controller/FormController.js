@@ -4,10 +4,10 @@ const FormModel = require('../Model/FormModel');
 const formCont = async (req, res)=>{
     try {
         const form = new FormModel({
-            day: {type: String, required: true},
-            amount: {type: String, required: true},
-            phoneNo: {type: String, required: true},
-            proname: {type: String, required: true}
+            day: req.body.day,
+            amount: req.body.amount,
+            phoneNo: req.body.phoneNo,
+            proname: req.body.proname
         })
 
         await form.save();
