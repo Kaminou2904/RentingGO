@@ -13,13 +13,8 @@ function Detail(props) {
   const { name } = useParams();
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const [activeTabIndexAmt, setActiveTabIndexAmt] = useState(0);
-  const [formData, setFormData] = useState({});
   const [formNum, setFormnum] = useState('');
   const phoneNo  = formNum;
-
-  useEffect(()=>{
-    console.log(formData)
-  },[formData])
 
   useEffect(() => {
     const foundProduct = findProductByName(name);
@@ -61,7 +56,6 @@ function Detail(props) {
     form.day = document.querySelector('.activeTabD').innerText;
     form.amount = document.querySelector('.activeTabA').innerText;
     form.phoneNo = phoneNo;
-    setFormData(form);
     setFormDisplay('none');
     setActiveTabIndexAmt(0);
     setActiveTabIndex(0);
