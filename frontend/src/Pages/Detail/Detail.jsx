@@ -69,7 +69,7 @@ function Detail(props) {
     document.querySelector('.numInpu').value = '';
 
     try {
-      const res = await fetch('http://localhost:9999/formup', {
+      const res = await fetch('https://rentinggoapi.onrender.com/formup', {
         method: 'POST',
         headers:{
           'Content-Type': 'application/json'
