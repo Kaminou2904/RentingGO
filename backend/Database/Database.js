@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const uri = 'mongodb://127.0.0.1:27017/rentinggo';
+const uri = 'mongodb+srv://houtarou29:houtarou29@cluster0.jmt7pru.mongodb.net/rentinggo';
 
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(()=> console.log('connected to the database'))
