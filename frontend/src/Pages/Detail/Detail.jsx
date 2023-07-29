@@ -14,6 +14,8 @@ function Detail(props) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const [activeTabIndexAmt, setActiveTabIndexAmt] = useState(0);
   const [formData, setFormData] = useState({});
+  const [formNum, setFormnum] = useState('');
+  const phoneNo  = formNum;
 
   useEffect(()=>{
     console.log(formData)
@@ -53,18 +55,37 @@ function Detail(props) {
     });
   };
 
-  const submitfunc = () => {
+  const submitfunc = async () => {
     const form = {}
-    form.product = name;
+    form.proname = name;
     form.day = document.querySelector('.activeTabD').innerText;
-    form.amt = document.querySelector('.activeTabA').innerText;
-    form.num = document.querySelector('.numInpu').value;
+    form.amount = document.querySelector('.activeTabA').innerText;
+    form.phoneNo = phoneNo;
     setFormData(form);
     setFormDisplay('none');
     setActiveTabIndexAmt(0);
     setActiveTabIndex(0);
-    setThankDisp('flex');
+    
     document.querySelector('.numInpu').value = '';
+
+    try {
+      const res = await fetch('http://localhost:9999/formup', {
+        method: 'POST',
+        headers:{
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(form)
+      });
+      const data = await res.json()
+      if(data.success){
+        setThankDisp('flex');
+      }else{
+        alert('We are not able to connect to the server, Please try again after sometime.')
+      }
+    } catch (error) {
+      alert('We are not able to connect to the server, Please try again after sometime.')
+      console.log(error);
+    }
   }
 
   return (
@@ -177,7 +198,7 @@ function Detail(props) {
           </div>
           <div className="numberForm ">
             <p className="fs-4 mb-1 fw-bold">Enter your number</p>
-            <input type="text" name='number' className='numInpu form-control fs-4 mb-0' placeholder='Ex. 1234567890'/><br />
+            <input type="text" name='phoneNo' className='numInpu form-control fs-4 mb-0' value={formNum} onChange={(e)=> setFormnum(e.target.value)} placeholder='Ex. 1234567890'/><br />
             <button className="btn btn-primary m-0 fs-5" onClick={submitfunc}>Submit</button>
           </div>
         </div>
