@@ -23,6 +23,11 @@ function Dashboard() {
         fetchingFunc();
     },[]);
 
+    const formatDate = (dateStr)=>{
+        const dateObj = new Date(dateStr);
+        return dateObj.toLocaleString();
+    }
+
   return (
     <div>
         <Header headTxt1="Dash" headTxt2="Board" back="none"/>
@@ -45,7 +50,7 @@ function Dashboard() {
                         <p className="col-md-2 p-0 text-start fs-6">{form.amount}</p>
                         <p className="col-md-2 p-0 text-start fs-6">{form.phoneNo}</p>
                         <p className="col-md-2 p-0 text-start fs-6">{form.day}</p>
-                        <p className="col-md-2 p-0 text-start fs-6">{form.submitDate}</p>
+                        <p className="col-md-2 p-0 text-start fs-6">{formatDate(form.submitDate)}</p>
                         <p className="col-md-2 p-0 text-start fs-6">Check | Delete</p>
                     </div>
                 ))
