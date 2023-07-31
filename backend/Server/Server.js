@@ -7,6 +7,7 @@ const db = require('../Database/Database');
 const allProCont = require('../Controller/ProductController');
 const {validateForm, formCont} = require('../Controller/FormController');
 const getform = require('../Controller/Getformcontroller');
+const DeletFormCont = require('../Controller/DeleteFormController');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -18,6 +19,7 @@ app.get('/', (req, res)=>{
 app.get('/allpro', allProCont);
 app.post('/formup', validateForm, formCont);
 app.get('/getform', getform);
+app.delete('/getform/:id', DeletFormCont);
 
 app.listen(port, ()=>{
     console.log('server started on port ', port);
