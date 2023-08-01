@@ -5,7 +5,8 @@ const formSchema = new mongoose.Schema({
     day: {type: String, required: true},
     amount: {type: String, required: true},
     phoneNo: {type: String, required: true},
-    proname: {type: String, required: true}
+    proname: {type: String, required: true},
+    delivered: {type: Boolean, required: true, default: false}
 });
 
 const orderform = mongoose.model('orderform', formSchema);

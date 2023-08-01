@@ -50,6 +50,10 @@ function Dashboard() {
             alert('error occured while deleting the form');
             console.log('error occured while deleting the form, ', error);
         }
+    };
+
+    const checkFunc = (formId)=>{
+        console.log('this is the checked form', formId);
     }
 
     return (
@@ -75,7 +79,7 @@ function Dashboard() {
                             <p className="col-md-2 p-0 text-center fs-6">{form.phoneNo}</p>
                             <p className="col-md-2 p-0 text-center fs-6">{form.day}</p>
                             <p className="col-md-2 p-0 text-center fs-6">{formatDate(form.submitDate)}</p>
-                            <p className="col-md-2 p-0 text-center fs-6"><i className="fas fa-check text-primary pe-2 actionIcon"></i> | <i className="fas fa-trash-alt ps-2 text-danger actionIcon" onClick={() => deleteFunc(form._id)}></i></p>
+                            <p className="col-md-2 p-0 text-center fs-6"><i className="fas fa-check text-primary pe-2 actionIcon" onClick={()=> checkFunc(form._id)}></i> | <i className="fas fa-trash-alt ps-2 text-danger actionIcon" onClick={() => deleteFunc(form._id)}></i></p>
                         </div>
                     ))
                 }
