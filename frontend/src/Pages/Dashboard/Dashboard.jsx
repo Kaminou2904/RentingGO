@@ -39,7 +39,7 @@ function Dashboard() {
                 method: 'DELETE'
             });
             setForms((prevForm)=> prevForm.filter((form) => form._id !== formId));
-            alert('deleted the form by id ', formId);
+            alert('deleted the form by id ' + formId);
         } catch (error) {
             alert('error occured while deleting the form');
             console.log('error occured while deleting the form, ', error);
