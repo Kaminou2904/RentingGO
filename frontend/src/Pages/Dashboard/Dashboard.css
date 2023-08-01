@@ -1,3 +1,7 @@
+.DashWrap{
+    min-height: 100vh;
+}
+
 .tableData:nth-child(even){
     background-color: rgb(244, 244, 244);
 }
