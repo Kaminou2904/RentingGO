@@ -37,7 +37,7 @@ function Dashboard() {
         console.log('deleting', formId)
         try {
             await fetch(`https://rentinggoapi.onrender.com/getform/${formId}`, {
-                method: 'DELTE'
+                method: 'DELETE'
             });
             setForms((prevForm)=> prevForm.filter((form) => form._id !== formId));
         } catch (error) {

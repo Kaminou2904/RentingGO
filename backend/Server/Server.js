@@ -9,14 +9,12 @@ const {validateForm, formCont} = require('../Controller/FormController');
 const getform = require('../Controller/Getformcontroller');
 const DeletFormCont = require('../Controller/DeleteFormController');
 
+app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/', (req, res)=>{
     res.send('hello this is first response');
 });
-
-app.use(cors());
-
 app.get('/allpro', allProCont);
 app.post('/formup', validateForm, formCont);
 app.get('/getform', getform);
