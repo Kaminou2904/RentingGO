@@ -33,8 +33,17 @@ function Dashboard() {
         return `${day}/${month}/${year}, ${hours}:${minutes}`;
     }
 
-    const deleteFunc = (formId)=>{
+    const deleteFunc = async (formId)=>{
         console.log('deleting', formId)
+        try {
+            await fetch(`https://rentinggoapi.onrender.com/getform/${formId}`, {
+                method: 'DELTE'
+            });
+            setForms((prevForm)=> prevForm.filter((form) => form._id !== formId));
+        } catch (error) {
+            alert('error occured while deleting the form');
+            console.log('error occured while deleting the form, ', error);
+        }
     }
 
   return (
@@ -54,7 +63,7 @@ function Dashboard() {
 
            {
                 Forms.map((form, index)=>(
-                    <div key={index} className="tableData row justify-content-between pt-3 ps-2 border-bottom">
+                    <div key={index} className="tableData row justify-content-between pt-3 ps-3 border-bottom">
                         <p className="col-md-2 p-0 text-center fs-6">{form.proname}</p>
                         <p className="col-md-2 p-0 text-center fs-6">{form.amount}</p>
                         <p className="col-md-2 p-0 text-center fs-6">{form.phoneNo}</p>
