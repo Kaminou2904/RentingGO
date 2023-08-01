@@ -34,12 +34,12 @@ function Dashboard() {
     }
 
     const deleteFunc = async (formId)=>{
-        console.log('deleting', formId)
         try {
             await fetch(`https://rentinggoapi.onrender.com/getform/${formId}`, {
                 method: 'DELETE'
             });
             setForms((prevForm)=> prevForm.filter((form) => form._id !== formId));
+            alert('deleted the form by id ', formId);
         } catch (error) {
             alert('error occured while deleting the form');
             console.log('error occured while deleting the form, ', error);
