@@ -72,14 +72,15 @@ function Dashboard() {
                 </div>
 
                 {
-                    Forms.map((form, index) => (
-                        <div key={index} className="tableData row justify-content-between pt-3 ps-3 border-bottom">
+                    Forms.map((form) => (
+                        <div key={form._id} className="tableData row align-items-center pt-3 ps-3 border-bottom">
                             <p className="col-md-2 p-0 text-center fs-6">{form.proname}</p>
                             <p className="col-md-2 p-0 text-center fs-6">{form.amount}</p>
                             <p className="col-md-2 p-0 text-center fs-6">{form.phoneNo}</p>
                             <p className="col-md-2 p-0 text-center fs-6">{form.day}</p>
                             <p className="col-md-2 p-0 text-center fs-6">{formatDate(form.submitDate)}</p>
-                            <p className="col-md-2 p-0 text-center fs-6"><i className="fas fa-check text-primary pe-2 actionIcon" onClick={()=> checkFunc(form._id)}></i> | <i className="fas fa-trash-alt ps-2 text-danger actionIcon" onClick={() => deleteFunc(form._id)}></i></p>
+                            <p className={`col-md-2 p-0 text-center fs-6 ${form.delivered ? 'd-none' : ''}`}><i className="fas fa-check text-primary pe-2 actionIcon" onClick={()=> checkFunc(form._id)}></i> | <i className="fas fa-trash-alt ps-2 text-danger actionIcon" onClick={() => deleteFunc(form._id)}></i></p>
+                            <p className={`col-md-2 p-0 text-center fs-5 text-success fw-bold ${!form.delivered ? 'd-none' : ''}`}>Delivered</p>
                         </div>
                     ))
                 }
