@@ -52,8 +52,20 @@ function Dashboard() {
         }
     };
 
-    const checkFunc = (formId)=>{
+    const checkFunc = async (formId)=>{
         console.log('this is the checked form', formId);
+        try {
+            await fetch(`https://rentinggoapi.onrender.com/getform/${formId}`, {
+                method: 'PUT'
+            });
+            // setForms((prevForm) => prevForm.filter((form) => form._id !== formId));
+            fetchingFunc()
+            alert('updated the form by id ' + formId);
+        } catch (error) {
+            alert('error occured while updating !')
+            console.log(error)
+        }
+        
     }
 
     return (
@@ -80,7 +92,7 @@ function Dashboard() {
                             <p className="col-md-2 p-0 text-center fs-6">{form.day}</p>
                             <p className="col-md-2 p-0 text-center fs-6">{formatDate(form.submitDate)}</p>
                             <p className={`col-md-2 p-0 text-center fs-6 ${form.delivered ? 'd-none' : ''}`}><i className="fas fa-check text-primary pe-2 actionIcon" onClick={()=> checkFunc(form._id)}></i> | <i className="fas fa-trash-alt ps-2 text-danger actionIcon" onClick={() => deleteFunc(form._id)}></i></p>
-                            <p className={`col-md-2 p-0 text-center fs-5 text-success fw-bold ${!form.delivered ? 'd-none' : ''}`}>Delivered</p>
+                            <p className={`col-md-2 p-0 text-center fs-5 text-success fw-bold ${!form.delivered ? 'd-none' : ''}`}>Delivered | <i className="fas fa-trash-alt ps-2 text-danger actionIcon" onClick={() => deleteFunc(form._id)}></i></p>
                         </div>
                     ))
                 }
