@@ -42,8 +42,8 @@ function Home() {
                 <div className="more mb-5">
                     <p className='fw-bold fs-3 mb-0 yourP'>there's more<br /> <span className='text-muted fw-normal border-bottom border-danger fs-5'> to renting.</span></p>
                     <div className="moreCardWrap mt-4 d-flex flex-wrap">
-                        <Morecard />
-                        <Morecard />
+                        <Morecard icon='./images/qualityIcon.png' head='Finest Quality Products' para="Quality matters to you, and us! That's why we do a strict quality-check for every product."/>
+                        <Morecard icon='./images/maintainIcon.png' head='Free maintenance' para="Quality matters to you, and us! That's why we do a strict quality-check for every product."/>
                     </div>
                 </div>
             </div>
