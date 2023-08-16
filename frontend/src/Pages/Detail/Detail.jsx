@@ -40,10 +40,10 @@ function Detail(props) {
     <div key={index}>{line}</div>
   ));
 
-  const getDayAfterTomorrow = () => {
+  const getDayAfterTomorrow = (addDate) => {
     const today = new Date();
     const dayAfterTomorrow = new Date(today);
-    dayAfterTomorrow.setDate(today.getDate() + 2);
+    dayAfterTomorrow.setDate(today.getDate() + addDate);
     return dayAfterTomorrow.toLocaleDateString("en-US", {
       month: "short",
       day: "numeric",
@@ -175,19 +175,22 @@ function Detail(props) {
               <button className={`dateCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 btn ${activeTabIndex === 1 ? "activeTabD" : ""}`} onClick={() => setActiveTabIndex(1)}>tommorrow</button>
             </div>
             <div className="dateCard">
-              <button className={`dateCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 btn ${activeTabIndex === 2 ? "activeTabD" : ""}`} onClick={() => setActiveTabIndex(2)}>{getDayAfterTomorrow()}</button>
+              <button className={`dateCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 btn ${activeTabIndex === 2 ? "activeTabD" : ""}`} onClick={() => setActiveTabIndex(2)}>{getDayAfterTomorrow(2)}</button>
             </div>
           </div>
           <p className="mb-1 fs-4 fw-bold">How Much</p>
           <div className="amoundWrap d-flex">
             <div className="amountCard">
-              <button className={`amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 btn ${activeTabIndexAmt === 0 ? "activeTabA" : ""}`} onClick={() => setActiveTabIndexAmt(0)}>0 - 10</button>
+              <button className={`amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 text-nowrap btn ${activeTabIndexAmt === 0 ? "activeTabA" : ""}`} onClick={() => setActiveTabIndexAmt(0)}>0 - 10</button>
             </div>
             <div className="amountCard">
-              <button className={`amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 btn ${activeTabIndexAmt === 1 ? "activeTabA" : ""}`} onClick={() => setActiveTabIndexAmt(1)}>10 - 20</button>
+              <button className={`amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 text-nowrap btn ${activeTabIndexAmt === 1 ? "activeTabA" : ""}`} onClick={() => setActiveTabIndexAmt(1)}>10 - 20</button>
             </div>
             <div className="amountCard">
-              <button className={`amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 btn ${activeTabIndexAmt === 2 ? "activeTabA" : ""}`} onClick={() => setActiveTabIndexAmt(2)}>20 - 30</button>
+              <button className={`amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 text-nowrap btn ${activeTabIndexAmt === 2 ? "activeTabA" : ""}`} onClick={() => setActiveTabIndexAmt(2)}>20 - 30</button>
+            </div>
+            <div className="amountCard">
+              <button className={`amoutCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 text-nowrap btn ${activeTabIndexAmt === 3 ? "activeTabA" : ""}`} onClick={() => setActiveTabIndexAmt(3)}>More</button>
             </div>
           </div>
           <div className="numberForm ">
