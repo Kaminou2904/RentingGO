@@ -27,6 +27,7 @@ function Home() {
                     <Categories index='5' img='./images/pedestrialfan.png' txt='Pedestal Fan' />
                     <Categories index='6' img='./images/electricheater.png' txt='Heater' />
                     <Categories index='7' img='./images/portablewash.png' txt='Washroom' />
+                    <Categories index='8' img='./images/towerAc2-removebg-preview.png' txt='Tower AC' />
                 </div>
                 <div className="yourLoveWrap my-5">
                     <p className='fw-bold fs-3 mb-0 yourP'>You'll love <br /> <span className='text-muted fw-normal border-bottom border-danger fs-5'> to take these home.</span></p>
