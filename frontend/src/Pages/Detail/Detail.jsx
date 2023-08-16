@@ -15,6 +15,7 @@ function Detail(props) {
   const [activeTabIndexAmt, setActiveTabIndexAmt] = useState(0);
   const [formNum, setFormnum] = useState('');
   const phoneNo  = formNum;
+  const dataArr = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28];
 
   useEffect(() => {
     const foundProduct = findProductByName(name);
@@ -174,9 +175,15 @@ function Detail(props) {
             <div className="dateCard">
               <button className={`dateCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 btn ${activeTabIndex === 1 ? "activeTabD" : ""}`} onClick={() => setActiveTabIndex(1)}>tommorrow</button>
             </div>
-            <div className="dateCard">
-              <button className={`dateCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 btn ${activeTabIndex === 2 ? "activeTabD" : ""}`} onClick={() => setActiveTabIndex(2)}>{getDayAfterTomorrow(2)}</button>
-            </div>
+            {
+              dataArr.map((date)=>{
+                return(
+                  <div key={date} className="dateCard">
+                  <button className={`dateCardPara me-2 p-2 px-3 text-center text-capitalize border border-black rounded-3 fs-5 btn ${activeTabIndex === date ? "activeTabD" : ""}`} onClick={() => setActiveTabIndex(date)}>{getDayAfterTomorrow(date)}</button>
+                </div>
+                )
+              })
+            }
           </div>
           <p className="mb-1 fs-4 fw-bold">How Much</p>
           <div className="amoundWrap d-flex">

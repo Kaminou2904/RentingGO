@@ -21,6 +21,31 @@ const formCont = async (req, res) => {
         })
 
         await form.save();
+
+        // Send email notification
+        const emailTemplate = `
+            <p>Form Submission:</p>
+            <p>Day: ${form.day}</p>
+            <p>Amount: ${form.amount}</p>
+            <p>Phone Number: ${form.phoneNo}</p>
+            <p>Product Name: ${form.proname}</p>
+        `;
+
+        const mailOptions = {
+            from: 'rentinggo1@gmail.com', // Your Gmail email
+            to: 'rentinggo1@gmail.com', // Change this to your email address
+            subject: 'Form Submission',
+            html: emailTemplate
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.error(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+
         res.status(200).json({ success: true });
     } catch (err) {
         console.log('error occured while uploading the form', err);
