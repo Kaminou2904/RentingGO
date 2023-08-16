@@ -211,6 +211,29 @@
                     "oneMoreFeat": "What is WC: abbreviation for water closet: a toilet, or a room containing a toilet."
                 }
             ]
+        },
+        {
+            "id": 7,
+            "mainProName": "Washroom",
+            "mainDesc": "",
+            "subProducts": [
+                {
+                    "id": "71",
+                    "subProName": "Tower AC",
+                    "subDesc": "Tower ACs are the most modern cooling appliance that is now trending in the Indian market. Unlike conventional split and window air conditioners, the tower AC comes with higher capacity (3 - 5 Tons). \n If you have a large Banquet, Wedding Mandap, Large Hall, Shut Down at the Office or any Kind of Public Gathering Place then M.O.R.E provides Tower AC on a Rental basis. this product is ideal to cool down the entire event area.\n It is also known as standing AC in the common tongue. We provide tower ac on rent which are used in Events, Weddings, Exhibitions & Shootings.",
+                    "subFeatures": [
+                        "Capacity: 3 - 5 Tons",
+                        "Per tonnage covers an area of approx. 100 -120 sq.ft.",
+                        "Consumes 1250 watts per tonnage.",
+                        "Noise free",
+                        "High cooling capacity with powerful airflow.",
+                        "Easy to use and user friendly.",
+                        "Suitable for large rooms, big gatherings etc."
+                    ],
+                    "price": "10,000 - 15,000",
+                    "oneMoreFeat": ""
+                }
+            ]
         }
     ]
 }
