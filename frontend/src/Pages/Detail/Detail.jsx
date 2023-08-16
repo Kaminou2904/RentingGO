@@ -94,7 +94,7 @@ function Detail(props) {
       <div className="rightDesk">
         <div className="spaInfo mt-3 container">
           <h3 className="mb-0">{product.subProName}</h3>
-          <p className="mb-0 fs-6 fw-bold">	&#8377;<span className='fs-5 text-primary'>{product.price}</span>/Day</p>
+          <p className="mb-0 fs-6 fw-bold">	&#8377;<span className='fs-5 text-primary'>{product.price}</span>/Day Onwards</p>
           <div className="detailRating bg-light rounded-3 p-2 d-flex justify-content-between mt-3">
             <div className="starts">
               <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i
