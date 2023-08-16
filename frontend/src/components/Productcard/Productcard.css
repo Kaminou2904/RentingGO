@@ -276,7 +276,8 @@ body{
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     /* margin-top: -28px; */
-    /* height: 60%; */
+    height: 250px !important;
+    width: 100% !important;
 }
 
 .featData{

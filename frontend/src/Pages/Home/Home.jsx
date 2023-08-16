@@ -34,7 +34,7 @@ function Home() {
                     <div className="yourLove d-flex justify-content-start py-4 px-3">
                         {
                             fetchedData.map((item)=>(
-                                <Productcard key={item.id} price={item.subProducts[0].price} name={item.subProducts[0].subProName} img='../images/airpuri.jpg'/>
+                                <Productcard key={item.id} price={item.subProducts[0].price} name={item.subProducts[0].subProName} img={item.subProducts[0].img}/>
                             ))
                         }
                     </div>

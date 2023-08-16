@@ -88,7 +88,7 @@ function Detail(props) {
         <div className="detailBackBtn">
           <button className='btn p-0 m-0' onClick={() => navigate(-1)}><i className="fas fa-chevron-left rounded-circle me-3 fs-4 p-2 pe-3 text-white"></i></button>
         </div>
-        <Carousel carouselid='detailCar' img1='../images/airpurism.jpg' img2='../images/airpuri2.jpg' img3='../images/airpuri1.jpg' />
+        <Carousel carouselid='detailCar' img1={product.img} img2={product.img} img3={product.img} />
       </div>
 
       <div className="rightDesk">

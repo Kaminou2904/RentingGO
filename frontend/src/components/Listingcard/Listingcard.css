@@ -2,3 +2,13 @@
     width: min(100%, 350px);
     box-shadow: 0 0 10px rgb(171, 171, 171);
 }
+
+.listingcardImg{
+    height: 300px;
+    width: 100%;
+}
+
+.listingcardImg img{
+    height: 100% !important;
+    width: 100% !important;
+}

@@ -23,7 +23,7 @@ function Listing() {
         {
           listingData && listingData.subProducts ? (
             listingData.subProducts.map((item)=>(
-              <Listingcard key={item.id} name={item.subProName} price={item.price} id={item.id} img1='../images/airpuri.jpg' img2='../images/airpuri.jpg' img3='../images/airpuri.jpg'/>
+              <Listingcard key={item.id} name={item.subProName} price={item.price} id={item.id} img={item.img}/>
             ))
           ) : (
             <p>Loading...</p>
