@@ -10,8 +10,8 @@ const validateForm = [
 const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: 'your.email@gmail.com', // Your Gmail email
-        pass: 'your-email-password' // Your Gmail password
+        user: 'rentinggo1@gmail.com', // Your Gmail email
+        pass: 'Rent@123' // Your Gmail password
     }
 });
 
