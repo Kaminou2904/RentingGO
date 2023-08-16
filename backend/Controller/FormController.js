@@ -1,10 +1,19 @@
 const db = require('../Database/Database');
 const FormModel = require('../Model/FormModel');
 const { body, validationResult } = require('express-validator');
+const nodemailer = require('nodemailer');
 
 const validateForm = [
     body('phoneNo').notEmpty().withMessage('Phone number is required').isLength({min: 10}).withMessage('Enter a valid number!'),
 ];
+
+const transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: 'your.email@gmail.com', // Your Gmail email
+        pass: 'your-email-password' // Your Gmail password
+    }
+});
 
 const formCont = async (req, res) => {
     try {
